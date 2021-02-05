@@ -1,6 +1,6 @@
 ---
 title: "Third Blog"
-description: "What should you use to manage global, GraphQL, and local state in React.js?"
+description: "This is me trying"
 slug: "/blog3"
 date: "04-04-2021"
 ---
