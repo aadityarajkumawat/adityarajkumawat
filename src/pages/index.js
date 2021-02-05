@@ -10,6 +10,7 @@ export default function Home({ data }) {
     profileImg:
       "https://i.ibb.co/T8zCFw1/Whats-App-Image-2021-01-18-at-4-19-26-PM-copy.jpg",
     location: "Jaipur, RJ",
+    twitter: "https://twitter.com/Aaditya86763230",
   };
   return (
     <Fragment>
@@ -17,7 +18,7 @@ export default function Home({ data }) {
         <div className="main">
           <div className="my-image-and-name">
             <div className="image-container">
-              <img src={myData.profileImg} />
+              <img src={myData.profileImg} alt="profile-of-user" />
             </div>
             <div className="name-container">
               <div className="my-name">
@@ -26,6 +27,14 @@ export default function Home({ data }) {
                 </a>
               </div>
               <div className="my-location">{myData.location}</div>
+              <div className="contact">
+                Reach me:{" "}
+                {
+                  <a href={myData.twitter} target="__blank">
+                    @Aaditya86763230
+                  </a>
+                }
+              </div>
             </div>
           </div>
           <div className="my-bio">
@@ -44,7 +53,7 @@ export default function Home({ data }) {
           <div className="my-posts">
             <div>My Posts</div>
             <ul>
-              {data.allMarkdownRemark.edges.map((node) => {
+              {data.allMarkdownRemark.edges.reverse().map((node) => {
                 console.log(node.node.frontmatter.title);
                 return (
                   <li>

@@ -1,25 +1,30 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
-import BackIcon from "../components/BackIcon";
 
 export default function BlogPost({ data }) {
   const post = data.markdownRemark;
   return (
     <div className="blog-container">
       <div className="navs center">
-        <span>
-          <BackIcon />
-        </span>
         <span className="home-text">
           <Link to="/">Home</Link>
         </span>
       </div>
+      <div className="info center">
+        <span>
+          {post.frontmatter.slug.substr(1, 4) +
+            "#" +
+            post.frontmatter.slug.substr(5, 6)}
+        </span>
+        <span>{post.frontmatter.date}</span>
+      </div>
       <h1>{post.frontmatter.title}</h1>
-      <div className="date-span">{post.frontmatter.date}</div>
       <div
         dangerouslySetInnerHTML={{ __html: post.html }}
         className="markd"
       ></div>
+
+      <div className="blog-footer"></div>
     </div>
   );
 }
@@ -31,6 +36,7 @@ export const query = graphql`
       frontmatter {
         title
         date
+        slug
       }
     }
   }
