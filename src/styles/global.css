@@ -182,3 +182,115 @@
   justify-content: space-between;
   font-size: 16px;
 }
+
+@media only screen and (max-width: 830px) {
+  .main {
+    width: 450px;
+  }
+  .image-container img {
+    width: 150px;
+  }
+  .my-name {
+    font-size: 25px;
+    font-weight: 700;
+  }
+  .my-bio {
+    font-size: 16px;
+  }
+  .my-posts div {
+    font-size: 17px;
+  }
+
+  .my-posts ul {
+    margin-left: 35px;
+  }
+
+  .my-posts li {
+    margin-bottom: 10px;
+  }
+
+  .my-posts ul li a {
+    color: #007acc;
+    font-size: 16px;
+  }
+  .blog-container {
+    width: 450px;
+  }
+  .blog-container h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  .markd p {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+  .markd ol li {
+    font-size: 15px;
+  }
+  .markd pre {
+    width: 100%;
+    padding: 15px;
+  }
+  .markd pre code {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .main {
+    width: 350px;
+  }
+  .image-container img {
+    width: 150px;
+  }
+  .my-name {
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .my-location {
+    font-size: 13px;
+  }
+  .contact {
+    font-size: 13px;
+  }
+  .my-bio {
+    font-size: 14px;
+  }
+  .my-posts div {
+    font-size: 16px;
+  }
+
+  .my-posts ul {
+    margin-left: 35px;
+  }
+
+  .my-posts li {
+    margin-bottom: 10px;
+  }
+
+  .my-posts ul li a {
+    color: #007acc;
+    font-size: 14px;
+  }
+  .blog-container {
+    width: 350px;
+  }
+  .blog-container h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  .markd p {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+  .markd ol li {
+    font-size: 15px;
+  }
+  .markd pre {
+    padding: 15px;
+    width: 100%;
+  }
+  .markd pre code {
+    font-size: 10px;
+  }
+}

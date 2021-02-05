@@ -42,5 +42,4 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     });
   });
-  console.log(JSON.stringify(result, null, 2));
 };
