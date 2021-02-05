@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  font-family: "Noto Serif";
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.main {
+  width: 680px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.my-image-and-name {
+  display: flex;
+}
+
+.image-container img {
+  width: 200px;
+}
+
+.name-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 40px;
+}
+.my-name {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.my-name a {
+  color: #000;
+  text-decoration: none;
+}
+
+.my-name a:hover {
+  color: #007acc;
+}
+
+.my-location {
+  margin-top: 5px;
+}
+
+.my-bio {
+  margin-top: 35px;
+  font-size: 18px;
+  user-select: none;
+}
+
+.my-bio a {
+  color: #007acc;
+}
+
+.my-posts {
+  margin-top: 60px;
+}
+
+.my-posts div {
+  font-size: 19px;
+  text-decoration: underline;
+  margin-bottom: 15px;
+}
+
+.my-posts ul {
+  margin-left: 35px;
+}
+
+.my-posts li {
+  margin-bottom: 10px;
+}
+
+.my-posts ul li a {
+  color: #007acc;
+  font-size: 18px;
+}

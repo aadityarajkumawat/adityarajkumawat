@@ -1,5 +1,5 @@
-import { Box, Center, Flex, Image, Link } from "@chakra-ui/react";
 import React, { Fragment } from "react";
+import "../styles/global.css";
 
 export default function Home() {
   const myData = {
@@ -10,43 +10,45 @@ export default function Home() {
   };
   return (
     <Fragment>
-      <Box w="100%" h="100vh">
-        <Center h="100%">
-          <Flex direction="column" w="35%" h="100vh" pt="4">
-            <Box w="100%" pt="4" pb="4" d="flex" alignItems="center">
-              <Image
-                boxSize="100px"
-                src={myData.profileImg}
-                objectFit="cover"
-              />
-              <Box p="2" d="flex" flexDirection="column">
-                <Box fontWeight="700" fontSize="xl">
-                  {myData.name}
-                </Box>
-                <Flex alignItems="center">
-                  {/* <BiMap /> */}
-                  <Box ml="1">{myData.location}</Box>
-                </Flex>
-              </Box>
-            </Box>
-            <Box w="100%" fontSize="xl">
-              I'm a software engineer, currently working on{" "}
-              <Link
-                href="https://github.com/aadityarajkumawat/stithi"
-                color="blue.500"
-                target="_blank"
-              >
-                stithi
-              </Link>
-              . I love probability in particular and mathematics in general.
-              Currently learning ChakraUI, my favourite technologies are: React,
-              NodeJS, PostgreSQL, GraphQL, Typescript and MongoDB.
-            </Box>
-            {/* <Blogs />
-            <Hire /> */}
-          </Flex>
-        </Center>
-      </Box>
+      <div className="container">
+        <div className="main">
+          <div className="my-image-and-name">
+            <div className="image-container">
+              <img src={myData.profileImg} />
+            </div>
+            <div className="name-container">
+              <div className="my-name">
+                <a href="https://github.com/aadityarajkumawat" target='__blank'>{myData.name}</a>
+              </div>
+              <div className="my-location">{myData.location}</div>
+            </div>
+          </div>
+          <div className="my-bio">
+            Im a software engineer working on{" "}
+            <a
+              href="https://github.com/aadityarajkumawat/draftjs-raw-parser"
+              target="__blank"
+            >
+              DraftJS-Parser
+            </a>
+            . I love doing stastical-probability in free time. Currently
+            learning Gatsby. My favourite technologies are React, NodeJS,
+            PostgreSQL, GraphQL and Docker.
+          </div>
+
+          <div className="my-posts">
+            <div>My Posts</div>
+            <ul>
+              <li>
+                <a href="#">How to manage state in react</a>
+              </li>
+              <li>
+                <a href="#">Redux vs Context API(2021)</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </Fragment>
   );
 }
