@@ -1,15 +1,17 @@
 ---
 title: How to Manage State in React.js?
 description: "What should you use to manage global, GraphQL, and local state in React.js?"
+slug: "/blog1"
+date: "02-02-2021"
 ---
 
 96% of state you need to manage is either data fetched from an API or local data only ~1 component needs.
 
-## data fetched from an API
+## Data fetched from an API
 
 You can store/handle this data using something like [redux](https://redux.js.org/) + [redux-thunk](https://github.com/reduxjs/redux-thunk) which will give you a lot of flexibility, but I prefer using a library specifically for data fetching to streamline the process. In the GraphQL space, this means something like [Apollo](https://www.apollographql.com/), [URQL](https://formidable.com/open-source/urql/), or [Relay](https://relay.dev/). For REST, [react-query](https://github.com/tannerlinsley/react-query) or [swr](https://github.com/zeit/swr).
 
-## local data only ~1 component needs
+## Local data only ~1 component needs
 
 If only 1 component needs the data, handle the state directly on the component with `useState` or `useReducer` which is built into React (I occasionally also like to use https://github.com/immerjs/use-immer). Doing so will colocate your state and make it very easy to reason about which component is responsible for which state.
 

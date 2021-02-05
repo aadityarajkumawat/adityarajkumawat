@@ -1,6 +1,8 @@
 ---
-title: How to Manage State in React.js?
+title: "Redux v/s Context API"
 description: "What should you use to manage global, GraphQL, and local state in React.js?"
+slug: "/blog2"
+date: "03-03-2021"
 ---
 
 96% of state you need to manage is either data fetched from an API or local data only ~1 component needs.

@@ -1,7 +1,10 @@
 import React, { Fragment } from "react";
 import "../styles/global.css";
+import { Link } from "gatsby";
+import { graphql } from "gatsby";
 
-export default function Home() {
+export default function Home({ data }) {
+  console.log(data);
   const myData = {
     name: "Aditya Raj Kumawat",
     profileImg:
@@ -18,7 +21,9 @@ export default function Home() {
             </div>
             <div className="name-container">
               <div className="my-name">
-                <a href="https://github.com/aadityarajkumawat" target='__blank'>{myData.name}</a>
+                <a href="https://github.com/aadityarajkumawat" target="__blank">
+                  {myData.name}
+                </a>
               </div>
               <div className="my-location">{myData.location}</div>
             </div>
@@ -39,12 +44,16 @@ export default function Home() {
           <div className="my-posts">
             <div>My Posts</div>
             <ul>
-              <li>
-                <a href="#">How to manage state in react</a>
-              </li>
-              <li>
-                <a href="#">Redux vs Context API(2021)</a>
-              </li>
+              {data.allMarkdownRemark.edges.map((node) => {
+                console.log(node.node.frontmatter.title);
+                return (
+                  <li>
+                    <Link to={node.node.frontmatter.slug}>
+                      {node.node.frontmatter.title}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>
@@ -52,3 +61,26 @@ export default function Home() {
     </Fragment>
   );
 }
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+
+    allMarkdownRemark {
+      edges {
+        node {
+          excerpt
+          frontmatter {
+            title
+            description
+            slug
+          }
+        }
+      }
+    }
+  }
+`;

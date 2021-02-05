@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap");
 
 * {
   margin: 0;
@@ -86,4 +87,65 @@
 .my-posts ul li a {
   color: #007acc;
   font-size: 18px;
+}
+
+.blog-container {
+  width: 680px;
+  margin: auto;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navs {
+  justify-content: flex-start;
+  padding: 20px 0;
+}
+
+.home-text a {
+  color: #007acc;
+  font-size: 17px;
+}
+
+.home-text {
+  margin-left: 5px;
+}
+
+.blog-container h1 {
+  font-size: 55px;
+}
+
+.date-span {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #00000090;
+}
+
+/* Markdown styles */
+
+.markd p {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+.markd a {
+  color: #007acc;
+}
+
+.markd pre {
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 25px;
+  background-color: #222;
+  color: white;
+  border-radius: 8px;
+}
+
+.markd pre code {
+  font-family: "Oxygen Mono";
 }
