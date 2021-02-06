@@ -4,7 +4,6 @@ import { Link } from "gatsby";
 import { graphql } from "gatsby";
 
 export default function Home({ data }) {
-  console.log(data);
   const myData = {
     name: "Aditya Raj Kumawat",
     profileImg:

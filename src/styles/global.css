@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
 * {
   margin: 0;
@@ -116,6 +117,7 @@
 
 .blog-container h1 {
   font-size: 55px;
+  font-family: "Montserrat";
 }
 
 .date-span {
@@ -128,7 +130,16 @@
 
 .markd p {
   font-size: 19px;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
+}
+
+.markd h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat";
 }
 
 .markd a {
@@ -139,11 +150,29 @@
   width: 90%;
   margin: auto;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   padding: 25px;
   background-color: #222;
   color: white;
   border-radius: 8px;
+}
+
+.markd blockquote {
+  margin-left: -1.75rem;
+  margin-right: 1.75rem;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 1.42188rem;
+  padding-right: 0;
+  padding-top: 0;
+  margin-bottom: 1.75rem;
+  font-size: 1.20112rem;
+  line-height: 1.75rem;
+  color: hsla(0, 0%, 0%, 0.59);
+  font-style: italic;
+  border-left: 0.32813rem solid hsla(0, 0%, 0%, 0.9);
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .markd pre code {
@@ -151,16 +180,30 @@
 }
 
 .markd h2 {
-  margin-bottom: 10px;
-  text-decoration: underline;
+  margin-bottom: 20px;
+  font-size: 30px;
+  margin-top: 40px;
+  /* text-decoration: underline; */
+}
+
+.markd ol {
+  margin-left: 30px;
+  margin-bottom: 40px;
+}
+
+.markd p img {
+  max-width: 100%;
+  margin-bottom: 30px;
 }
 
 .markd ol li {
   font-size: 17px;
+  margin: 5px 0 5px 0;
 }
 
 .markd h3 {
   margin-bottom: 8px;
+  margin-top: 35px;
 }
 
 /* Markdown styles end */
@@ -172,6 +215,19 @@
 
 .blog-footer {
   height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+
+.blog-footer a {
+  color: #007acc;
+  margin-right: 5px;
+  margin-left: 5px;
+  font-family: "Montserrat";
+  font-weight: 600;
 }
 
 .blog-container .info {

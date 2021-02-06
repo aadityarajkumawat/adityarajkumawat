@@ -26,7 +26,13 @@ export default function BlogPost({ data }) {
         className="markd"
       ></div>
 
-      <div className="blog-footer"></div>
+      <div className="blog-footer">
+        Contact me{" "}
+        <a href="https://twitter.com/Aaditya86763230" target="__blank">
+          @Aaditya86763230
+        </a>{" "}
+        for queries
+      </div>
     </div>
   );
 }

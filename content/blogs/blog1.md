@@ -1,62 +1,74 @@
 ---
-title: How to Manage State in React.js?
-description: "What should you use to manage global, GraphQL, and local state in React.js?"
+title: Web Development Roadmap Part-1 (2021)
+description: A path way to make your learning process easier
 slug: "/blog1"
-date: "02-02-2021"
+date: "06-02-2021"
 ---
 
-96% of state you need to manage is either data fetched from an API or local data only ~1 component needs.
+Any web-page in your browser is a combination of three base pillars, irrespective of the technology that was used to build them. All the work that browser does is to display thier combination on window.
 
-## Data fetched from an API
+### These three pillars are:
 
-You can store/handle this data using something like [redux](https://redux.js.org/) + [redux-thunk](https://github.com/reduxjs/redux-thunk) which will give you a lot of flexibility, but I prefer using a library specifically for data fetching to streamline the process. In the GraphQL space, this means something like [Apollo](https://www.apollographql.com/), [URQL](https://formidable.com/open-source/urql/), or [Relay](https://relay.dev/). For REST, [react-query](https://github.com/tannerlinsley/react-query) or [swr](https://github.com/zeit/swr).
+1. HTML
+2. CSS
+3. Javascript(JS)
 
-## Local data only ~1 component needs
+## Start from HTML
 
-If only 1 component needs the data, handle the state directly on the component with `useState` or `useReducer` which is built into React (I occasionally also like to use https://github.com/immerjs/use-immer). Doing so will colocate your state and make it very easy to reason about which component is responsible for which state.
+![HTML](https://i.ibb.co/XpGtPZ1/r-1933817-hi-BLy.jpg)
 
-I recommend you start with that approach for _almost_ every component you create then modify it slightly when other components need the state.
+HTML is the bare-bones of a web page, it is used to dump text, add links, images and videos on a web page using "HTML tags". Although there are close to 100 types of tags, but in practice you can get almost 99% of your work done with just a handful of them. Learning HTML is kinda fun if this is the first time you are trying it. Let me share some resources that helped me.
 
-1. If a child component needs the state, just pass it as a prop
+### Resources:
 
-```jsx
-const [open, setOpen] = useState(false)
+1. **[W3 Schools](https://www.w3schools.com/html/default.asp)** - Learn basic HTML tags
+2. **[HTML crash course](https://youtu.be/UB1O30fR-EE)** - Recommended
+3. **[Freecodecamp](https://www.freecodecamp.org/)** - Great for practice
+4. **[HTML & CSS crash course](https://youtu.be/vQWlgd7hV4A)** - A brief version
+5. **[Web Dev Bootcamp](https://www.udemy.com/course/the-complete-web-development-bootcamp/)** - Complete course for beginners
 
-return (
-  <div>
-    {/* passing state down to child component */}
-    <SomeButton open={open} setOpen={setOpen}>
-  </div>
-)
+```html
+<!-- Basic HTML template -->
+<html>
+  <head>
+    <title>Start learning HTML</title>
+  </head>
+  <body>
+    HTML is easy
+  </body>
+</html>
 ```
 
-2. If a sibling or parent component needs the state, [lift up the state](https://reactjs.org/docs/lifting-state-up.html) to the parent
+## Moving on to CSS
 
-```jsx
-// parent component
-const [open, setOpen] = useState(false)
+![comparison with and without CSS](https://i.ibb.co/m4VBZnf/css.jpg)
 
-return (
-  <div>
-    {/* passing state down to sibling components */}
-    <SomeButton open={open} setOpen={setOpen}>
-    <RecipeModal open={open} setOpen={setOpen} />
-  </div>
-)
-```
+> The image on right is the one after adding CSS to HTML and the one on left is just HTML
 
-### Won't I be passing down props a lot (aka prop drilling)?
+Learning CSS is a stage where things start getting more fun, it helps you add styles to web-page and gives you complete freedom in styling your page how ever you wish to. Although CSS is powerful in terms of its output, but it can get tiresome at times when doing a very basic task, for e.g. centring an image or a block gets tricky. CSS is kind of bushy, it keeps getting challenging the more try to dig in. No one expects you to know CSS or any technology inside-out, as a beginner you are expected to know how to do some basic styling like adding colours, fonts, dimensions, layouts, positioning.
 
-Most of the time, no. A lot of state is pretty flat and you won't be passing props very deep. If you're passing state down more than 2 levels that's usually an indicator you should do something else. Either you should flatten your component structure or your state doesn't fit into this category and you should follow the next section.
+### Resources
 
-## The Other 6% of State Management
+1. **[CSS Tutorial by FreeCodeCamp](https://youtu.be/1Rs2ND1ryYc)** - Great for absolute beginners
+2. **[W3 Schools CSS](https://www.w3schools.com/css/default.asp)** - Great as reference for certain topics
+3. **[CSS Blog](https://css-tricks.com/)** - Refer this for FlexBox and Grids
+4. **[CSS Grids Course](https://youtu.be/t6CBKf8K_Ac)** - CSS Grids are used to make layouts
+5. **[CSS Flexbox Course](https://youtu.be/-Wlt8NRtOpo)** - CSS Flexbox are also used to make layouts
 
-Situations where your state doesn't fit into the above 2 categories should be pretty rare. An example I've run across is alerts.
+## Once you are good with HTML & CSS
 
-![Alert Bubble](./notification.png)
+**_PRACTICE PRACTICE PRACTICE_**
 
-I wanted to be able to trigger an alert from any component, so the state for whether the alert is visible is roughly global.
+Start building static web sites, take inspirations form websites you visit day-to-day, try to build a website for a some idea that you had, explore [UI/UX design websites](https://dribbble.com/) to get web-site ideas another way that helped me is [Frontend Mentor](https://www.frontendmentor.io/), this allows you choose a design depending on your level and provides you with static assets shown in design images, it has also got a really helpful community to help you with problems that you may face.
 
-For situations like this where it's not feasible to pass down the state through props to each component that needs it, I like using React's built-in [Context](https://reactjs.org/docs/context.html) or a state management library.
+## Javascript(JS)
 
-What I choose depends on how complex the state is. For simple stuff, I really like [Zustand](https://github.com/react-spring/zustand) and for more complex state [Mobx](https://mobx.js.org/README.html).
+![javascript](https://i.ibb.co/tMfZQtV/3-173.png)
+So far we can make static web-pages using HTML and CSS, but theres no way we can add some functionality, like handling a button click, changing certain parameters depending on some conditions, this is where Javascript hops in. It helps you make your website interactive, by handling user actions, fetching data, manipulating DOM(document object model) and a lot more. But javascript is not only restricted to front-end it is currently being adopted by a lot of startups to build their web-site/apps backend server.
+
+### Resources
+
+1. [JS Crash Course](https://youtu.be/hdI2bqOjy3c) - Great for absolute beginners
+2. [ES6 Course](https://youtu.be/WZQc7RUAg18) - to be followed after basics of JS
+3. [Async and Await](https://youtu.be/_8gHHBlbziw) - getting advanced
+4. [Complete JS Course(2021)](https://www.udemy.com/course/the-complete-javascript-course/) - covers all the above and more
