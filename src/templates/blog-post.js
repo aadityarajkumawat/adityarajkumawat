@@ -1,10 +1,12 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
+import SEO from "../components/seo";
 
 export default function BlogPost({ data }) {
   const post = data.markdownRemark;
   return (
     <div className="blog-container">
+      <SEO title={post.frontmatter.title} description={post.excerpt} />
       <div className="navs center">
         <span className="home-text">
           <Link to="/">Home</Link>
@@ -38,6 +40,7 @@ export const query = graphql`
         date
         slug
       }
+      excerpt
     }
   }
 `;
