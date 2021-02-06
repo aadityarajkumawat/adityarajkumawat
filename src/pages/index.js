@@ -45,7 +45,7 @@ export default function Home({ data }) {
             >
               DraftJS-Parser
             </a>
-            . I love doing stastical-probability in free time. Currently
+            . I love trying new technologies and building stuff, currently
             learning Gatsby. My favourite technologies are React, NodeJS,
             PostgreSQL, GraphQL and Docker.
           </div>
