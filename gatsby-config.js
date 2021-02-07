@@ -37,6 +37,7 @@ module.exports = {
       options: {
         trackingId: "UA-189117809-1",
         anonymize: true,
+        head: true,
       },
     },
     `gatsby-transformer-remark`,
