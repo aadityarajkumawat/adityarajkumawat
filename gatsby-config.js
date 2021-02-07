@@ -33,9 +33,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-gtag`,
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingIds: ["UA-189117809-1"],
+        trackingId: "UA-189117809-1",
+        anonymize: true,
       },
     },
     `gatsby-transformer-remark`,
