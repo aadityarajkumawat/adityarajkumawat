@@ -32,6 +32,12 @@ module.exports = {
         icon: `src/images/icon.svg`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: ["UA-189117809-1"],
+      },
+    },
     `gatsby-transformer-remark`,
     `gatsby-plugin-react-helmet`,
   ],
