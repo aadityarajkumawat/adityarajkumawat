@@ -19,7 +19,7 @@
 }
 
 .main {
-  width: 680px;
+  width: 750px;
   display: flex;
   flex-direction: column;
   margin-top: 50px;
@@ -95,7 +95,7 @@
 }
 
 .blog-container {
-  width: 680px;
+  width: 750px;
   margin: auto;
 }
 
@@ -130,7 +130,7 @@
 
 .markd p {
   font-size: 19px;
-  /* margin-bottom: 40px; */
+  margin-bottom: 20px;
 }
 
 .markd h1,
@@ -147,10 +147,10 @@ h6 {
 }
 
 .markd pre {
-  width: 90%;
+  width: 100%;
   margin: auto;
   margin-top: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   padding: 25px;
   background-color: #222;
   color: white;
@@ -165,7 +165,7 @@ h6 {
   padding-left: 1.42188rem;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.75rem;
+  margin-bottom: 20px;
   font-size: 1.20112rem;
   line-height: 1.75rem;
   color: hsla(0, 0%, 0%, 0.59);
@@ -182,7 +182,7 @@ h6 {
 .markd h2 {
   margin-bottom: 20px;
   font-size: 30px;
-  margin-top: 40px;
+  /* margin-top: 40px; */
   /* text-decoration: underline; */
 }
 
@@ -192,7 +192,7 @@ h6 {
 }
 
 .markd p img {
-  max-width: 100%;
+  width: 100%;
   margin-bottom: 30px;
 }
 
@@ -202,15 +202,15 @@ h6 {
 }
 
 .markd h3 {
-  margin-bottom: 8px;
-  margin-top: 35px;
+  margin-bottom: 20px;
+  /* margin-top: 35px; */
 }
 
 /* Markdown styles end */
 
 .blog-container h1 {
-  margin-bottom: 50px;
-  margin-top: 20px;
+  margin-bottom: 20px;
+  /* margin-top: 20px; */
 }
 
 .blog-footer {
