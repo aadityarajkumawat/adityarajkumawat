@@ -40,7 +40,19 @@ module.exports = {
         head: true,
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-vscode`,
+            options: {
+              theme: "Dark+ (default dark)", // Or install your favorite theme from GitHub
+            },
+          },
+        ],
+      },
+    },
     `gatsby-plugin-react-helmet`,
   ],
 };
