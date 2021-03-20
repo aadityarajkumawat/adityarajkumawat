@@ -2,7 +2,7 @@
 title: "Context API - React"
 description: "The only context API(react) resource you will need"
 slug: "/blog2"
-date: "07-02-2021"
+date: "21-03-2021"
 ---
 
 ![random](https://images.unsplash.com/photo-1612533923019-b532b3131212?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)
@@ -188,7 +188,7 @@ export default userContext;
 
 ### Creating Provider Component
 
-useReducer hook takes two parameters first is the initial state and second is a function which determines the type of action to execute. It return an array with its first value at index 0 as the current state and second value is a function which is used to dispatch the action defined in the types.js. Here the changeBio function updates the bio of user by taking a string named bio as a parameter and runs the dispatch function triggering the useReducer function to execute the CHANGE \_ BIO action.
+useReducer hook takes two parameters first is the reducer function which determines the action to dispatch depending upon its type and second is the initial state. It return an array with its first value at index 0 as the current state and second value is a function which is used to dispatch the action defined in the types.js. Here the changeBio function updates the bio of user by taking a string named bio as a parameter and runs the dispatch function triggering the useReducer function to execute the CHANGE \_ BIO action.
 
 ```jsx
 // src/context/user/UserState.js
@@ -202,14 +202,6 @@ import { CHANGE_BIO } from '../types'
 const UserState = ({ children }) => {
   const initialState = {
     username: null;
-    name: null;
-    age: null;
-    posts: [];
-    createdAt: null;
-    following: 0;
-    followers: 0;
-    isAuthenticated: false;
-    profile_img: null;
     bio: null;
   };
 
@@ -222,14 +214,6 @@ const UserState = ({ children }) => {
   return (
     <UserContext.Provider value={{
       username: state.username,
-      name: state.name,
-      age: state.age,
-      posts: state.posts,
-      createdAt: state.createdAt,
-      following: state.following,
-      followers: state.followers,
-      isAuthenticated: state.isAuthenticated,
-      profile_img: state.profile_img,
       bio: state.bio,
       changeBio
     }}>
@@ -276,5 +260,52 @@ To consume the context we wrap all the components in the UserState components so
 ### Wrapping children components in Provider component
 
 ```js
+import Profile from "./components/Profile";
+import UserState from "./context/user/UserState";
 
+function App() {
+  return (
+    <UserState>
+      <div className="App">
+        <div>
+          <Profile />
+        </div>
+      </div>
+    </UserState>
+  );
+}
+
+export default App;
 ```
+
+Once the components that needs to have access to user context are a child of UserState component, they can access the userState by simply using the context with useContext hook, irrespective of its level in the DOM tree inside its provider(UserState component in this case).
+
+```js
+import React, { useContext } from "react";
+import UserContext from "../context/user/UserContext";
+
+const Profile = () => {
+  const userContext = useContext(UserContext);
+
+  return (
+    <div>
+      <div>username: {userContext.username}</div>
+      <div>bio: {userContext.bio}</div>
+
+      <div>
+        <button onClick={() => userContext.changeBio("JS is great!")}>
+          change bio
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default Profile;
+```
+
+## Final Demo
+
+![demo](https://i.ibb.co/7pTwvYV/ezgif-com-gif-maker.gif)
+
+This is a pattern that I personally like to use, whenever I use context API, but you are free to modify it into a pattern that you feel suits your way of doing stuff.

@@ -26,6 +26,19 @@ export default function BlogPost({ data }) {
         className="markd"
       ></div>
 
+      <div
+        style={{
+          width: "100%",
+          textAlign: "center",
+          marginTop: 50,
+          fontFamily: "Montserrat",
+          fontWeight: 700,
+          fontSize: 25
+        }}
+      >
+        Thank You
+      </div>
+
       <div className="blog-footer">
         Contact me{" "}
         <a href="https://twitter.com/Aaditya86763230" target="__blank">
